@@ -1,0 +1,282 @@
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+
+header{
+    background-color: #bbbbbb;
+    padding: 20px 0; /*espaçamento interno pra cima e pra baixo*/
+}
+.caixa{
+    position: relative; /*Para que o elemento absolute fique dentro da caixa, se não ele fica absoluto na página e não na tag*/
+    width: 940px; /*Um tamanho padrão para o tamanho dos navegadores*/
+    margin: 0 auto; /*↑↓ 0 e →← auto, Para se ajustar automáticamente ao tamanho das telas para direita e esquerda*/
+}
+nav {
+    position: absolute; /*Posicionamento absoluto, se o item que ele estiver dentro não for relativo ele fica absoluto na página*/
+    top: 100px;
+    right: 0px;
+
+}
+nav li{
+    display: inline; /* Ocupa só o tamanho do elemento, ai vai colocar o menu os itens um do lado do outro*/
+    margin: 0 0 0 15px; /*↑→↓←*/
+
+}
+nav a{
+    text-transform: uppercase; /*Transforma em maiúsculo*/
+    color: #000;
+    font-weight: bold; /*peso da fonte, parecido com um negrito*/
+    font-size: 22px;
+    text-decoration: none; /*nenhuma decoração de texto...Sublinhado e outros*/
+}
+nav a:hover{ /*no nav todos os a quando passar o mouse em cima*/
+    color: #c78c19;
+    text-decoration: underline; /*sublinhado*/
+}
+.produtos{ /*Toda a classe produtos*/
+    width: 940px; /*Largura total*/
+    margin: 0 auto; /*0 px pra cima e baixo e automático pra direita e esquerda*/
+    padding: 50px 0;/*Espaço interno de 50 pra cima e pra baixo, 0 px pra esquerda e direita*/
+}
+.produtos li{ /*Na classe produtos pega os itens que estão entre os li*/
+    display: inline-block; /*coloca os itens um ao lado do outro e é possível editar o tamanho */
+    text-align: center;
+    width: 30%;
+    vertical-align: top; /*Vai alinhar pela linha de cima, pq quando usa o inline block ele alinha de baixo pra cima*/
+    /*background-color: #CCCCCC; Ideal usar para testar o tamanho e como tá se comportando */
+    margin: 0 1.5%; /*30% * 3 do tamanho dos itens 90% + 1.5%* 6 = 99% da largura da caixa*/
+    padding: 30px 20px; /*O elemento aumenta o seu tamanho. Quando declaro que existe um espaçamento interno, estou aumentando o conteúdo.*/
+    box-sizing: border-box; /*Vai deixar o item travado nos 30% mesmo que mexa no padding*/
+    border: 2px solid #000;
+    
+    /* Funciona igual o de cima border-color: #000000;
+    border-width: 2px;
+    border-style: solid - linha 
+    dashed - tracejado
+    dotted - pontilhado*/;
+    /*border-top-width: 10px; Colocaria uma borda maior em cima*/
+    border-radius: 10px; /*Arrendodar as bordas*/
+}
+.produtos li:hover{ /*Quando passar o mouse em cima*/
+    border-color: #c78c19;
+}
+.produtos li:active{ /*Quando o botão do mouse estiver clicado em cima*/
+    border-color: #088c19;
+}
+.produtos li:hover h2{
+    font-size: 34px;
+    
+}
+
+.produtos h2{ /*Título das li*/
+    font-size: 30px;
+    font-weight: bold; /*Negrito*/
+}
+.produto-descricao{ 
+    font-size: 18px;  
+}
+
+.produto-preco{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    background: url("bg.jpg");
+    padding: 40px 0;
+}
+
+.copyright{
+    color: white;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+
+form{
+    margin: 40px 0;
+}
+
+form label, form legend{
+    display: block; /*Tirando o label do inline pq por padrão ficam um ao lado do outro*/
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padrao{
+    display: block; /*Tirando o input do inline pq por padrão ficam um ao lado do outro*/
+    margin: 0 0 20px;
+    padding: 10px 25px; /*Aumenta o espaçamento dos campos input, espaço entre o conteúdo e a borda e consequentemente o tamanho deles*/
+    width: 50%; /*Aumentando a largura para 50% do tamanho do main*/ 
+}
+
+.checkbox{
+   margin: 20px 0;
+}
+
+.enviar{
+    width: 40%; /*Larguda*/
+    padding: 15px 0; /*Espaçamento interno*/
+    background: orange; /*cor*/
+    color: white; /*Cor da fonte*/
+    font-weight: bold;   /*negrito*/
+    font-size: 18px;   /*tam fonte*/
+    border: none;   /*sem borda*/
+    border-radius: 5px;   /*arrendondar as pontas*/
+    transition: 1s all; /*Para a mudança no hover acontecer durante 1s e não instantaneamente. Usando o all funciona todos os transforms que estiverem na mesma linha, pq se tiverem dois em linhas diferentes vai ignorar o primeiro e fazer o segundo*/
+    cursor: pointer; /*Muda o cursor para a mãozinha*/
+}
+
+.enviar:hover{
+    background: darkorange;
+    transform: /*rotate(5deg) rodar 5 graus*/ scale(1.2); /* e aumentar 2%, já aumenta tudo do item sem precisar colocar pra aumentar fonte, estilos...*/
+}
+
+table{
+    margin: 20px 0 40px;
+}
+
+thead{
+    background: #555;
+    color: white;
+    font-weight: bold;
+}
+
+td, th{
+    border: 1px solid black;
+    padding: 8px 15px;
+}
+/*CSS da página inicial*/
+.banner{
+    width: 100%;
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em; /*Duas vezes o tamanho da fonte padrão*/
+    margin: 0 0 1em; /*fica do mesmo tamanho da fonte que é duas vezes maior que o tamanho padrão */
+    clear: left; /*Vai limpar a formatação do float para esse elemento e nem os abaixo dele serem afetados*/
+    /*color: rgba(0, 0, 0, 0.4);/*ultimo valor é a opacidade*/
+   /* text-shadow: 2px 2px red; Sombra em texto*/
+}
+
+
+.principal{
+    padding: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.principal p{
+    margin: 0 0 1em;
+}
+
+/*Precisa ajustar as duas tags pq o reset.css tiram todo tipo de formatação que já vem nos navegadores*/
+.principal strong{
+    font-weight: bold;
+}
+
+.principal em{
+    font-style: italic;
+}
+
+.mapa{
+    padding: 3em 0;
+    background: linear-gradient(#fefefe, #888888)
+}
+
+.mapa-conteudo{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.mapa p{
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.beneficios{
+    padding: 3em 0;
+    background: #888888;
+    /*box-shadow: inset 0 0 30px #ff0000; borda interna*/
+}
+.utensilios{
+    width: 120px;
+    float: left;/*A imagem vai "flutuar" e ficar no lado onde escolhemos, na esquerda e o texto vai se posicionar ao redor e todos os elementos abaixo do float vão ser afetados*/
+    margin: 0 20px 20px 0;
+}
+
+.conteudo-beneficios{
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-beneficios{
+    width: 40%;
+    display: inline-block; /*Neste caso tem que deixar sem espaços entre os elementos no HTML já que ocupa 40% nesse e 60% da imagem, ai nesse caso ficará um ao lado do outro, para que o espaço não reflita na exibição da página*/
+    vertical-align: top; /*Alinhar na parte de cima*/
+
+}
+.itens{
+    line-height: 1.5em; /*Tamanho da linha igual o tamanho da fonte mais 50%*/
+}
+
+.itens:first-child{
+    font-weight: bolder;
+}
+
+.itens::before{
+    content: "★";
+}
+
+
+.imagem-beneficios{
+    width: 60%; /*Reduz o tamanho da imagem para 60% do tamanho tela ou da "caixa", ajusta também a altura para que não fique distorcida*/
+    opacity: 100%;  /*Opacidade*/
+    box-shadow: 10px 10px 10px 0px #000; /*direita, baixo, 10px é espalhar a sombra após 10px depois da imagem, 0px é quanto mais ela aumentar, se espalhar. Da pra adicionar mais sombras, só colocar vírgula depois da cor ex:, -10px -10 px yellow. Ai o - a sombra vai pro lado contrário*/
+}
+
+.imagem-beneficios:hover{
+    opacity: 30%;
+    transition: 400ms; /*Duração da transição*/
+}
+
+
+.video{
+    width: 560px;
+    margin: 2em auto;
+}
+
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video, .produtos {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+
+    .produtos li{
+        display: block;
+        margin: 15px 10%;
+        width: auto;
+        
+    }
+    form, table{
+        margin: 5%;
+    }
+    
+    
+}
